@@ -17,12 +17,12 @@ import ReactDOM from 'react-dom';
 //class component
 
 class App extends React.Component{
-    constructor(props){
-        super(props);
+    // constructor(props){
+    //     super(props);
 
-        //this is only time we do direct assignment to this.state
+    //     //this is only time we do direct assignment to this.state
 
-        this.state = { lat:null,errorMessage:"" };
+    //     this.state = { lat:null,errorMessage:"" };
 
     // window.navigator.geolocation.getCurrentPosition(
     //     (position)=>{
@@ -36,7 +36,10 @@ class App extends React.Component{
     // );
 
 
-    }
+    // }
+
+    //Alter way of doing state initialization
+    state = { lat:null,errorMessage:""};
 
     componentDidMount(){
          window.navigator.geolocation.getCurrentPosition(
