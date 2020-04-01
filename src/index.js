@@ -49,6 +49,19 @@ class App extends React.Component{
      );
     }
 
+    renderContent(){
+        if(this.state.lat && !this.state.errorMessage){
+                // return <div>Latitude :{this.state.lat}</div>;
+                return <SeasonDisplay lat={this.state.lat}/>;
+            }
+            if(!this.state.lat && this.state.errorMessage){
+                return <div>Error :{this.state.errorMessage}</div>;
+            }
+
+           return  <Spinner message="Please accept the location request"/>;
+
+    }
+
     render(){
     //     window.navigator.geolocation.getCurrentPosition(
     //     (position)=>console.log(position),
@@ -62,16 +75,13 @@ class App extends React.Component{
     //         //     Error : {this.state.errorMessage}
     //         // </div>
     //    );
+    return (
+        <div className="border red">
+            {this.renderContent()}
+        </div>
+    );
 
-            if(this.state.lat && !this.state.errorMessage){
-                // return <div>Latitude :{this.state.lat}</div>;
-                return <SeasonDisplay lat={this.state.lat}/>;
-            }
-            if(!this.state.lat && this.state.errorMessage){
-                return <div>Error :{this.state.errorMessage}</div>;
-            }
-
-           return  <Spinner message="Please accept the location request"/>;
+            
        
         
     }
