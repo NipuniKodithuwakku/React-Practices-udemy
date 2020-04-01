@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import SeasonDisplay from './SeasonDisplay';
+import Spinner from './Spinner';
 //functional component
 
 // const App = ()=>{
@@ -70,7 +71,7 @@ class App extends React.Component{
                 return <div>Error :{this.state.errorMessage}</div>;
             }
 
-           return  <div>Loading!</div>;
+           return  <Spinner/>;
        
         
     }
